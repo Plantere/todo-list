@@ -1,4 +1,5 @@
 (ns todoist.repository.users
+  #_{:clj-kondo/ignore [:refer-all]}
   (:require [todoist.helpers.database :refer [generate-uuid append-json check-exist delete-by get-by edit-by read-json-file]]
             [clojure.java.io :refer :all]))
 

@@ -1,4 +1,5 @@
 (ns todoist.core-test
+  #_{:clj-kondo/ignore [:refer-all]}
   (:require [clojure.test :refer :all]
             [todoist.core :refer :all]))
 

@@ -1,4 +1,5 @@
 (ns todoist.helpers.database
+  #_{:clj-kondo/ignore [:refer-all]}
   (:require [clojure.data.json :as json] [clojure.java.io :refer :all]))
 
 (defn generate-uuid [] (.toString (java.util.UUID/randomUUID)))
