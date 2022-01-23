@@ -11,7 +11,7 @@
       (append-json params table-tasks))
     (throw (AssertionError. "User not exist in the system"))))
   
-(defn edit
+(defn update-tasks
   [task_id title description user_id status]
   (if (and (check-exist user_id "id" table-users) (check-exist task_id "id" table-tasks))
     (let [params {:id task_id :title title :description description :status status}]
