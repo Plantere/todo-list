@@ -31,7 +31,7 @@
   ([] (throw (AssertionError. "id is a mandatory parameter")))
 )
 
-(defn edit
+(defn update-users
   ([id name]
    (if (and (= (check-exist id "id" table-users) true) (not= (check-exist name "name" table-users) true))
      (edit-by id "id" table-users {:id id :name name})
