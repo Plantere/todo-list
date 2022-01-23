@@ -1,44 +1,59 @@
-# todoist
+# To-do-list :pushpin:
 
-FIXME: description
-
-## Installation
-
-Download from http://example.com/FIXME.
+Simple To-Do-List using clojure as primary language, and json as a way to store data of the API.
 
 ## Usage
 
-FIXME: explanation
+To use this API:
 
-    $ java -jar todoist-0.1.0-standalone.jar [args]
+    ;;First you need install all dependencies that we required to run this API, 
+    lein deps
 
-## Options
+    ;;In second you need run lein
+    lein run
 
-FIXME: listing of options this app accepts.
+when you run the command "lein run", you can use localhost:3000 to access the API
 
-## Examples
+## Routes
+###### Users
+    GET /users/
+    - This route return all stored users in users.json file
+    GET /users/{UUID}
+    - This route return all informations of user with uuid established
+    PUT /users/{UUID}
+    - This route can change name of user if exist, you have to send a body, like
+      {
+        "name":""
+      }
+    POST /users/
+    - This route can create a user, you have to send a body with name, like
+      {
+        "name":""
+      }
+    DELETE /users/{UUID}
+    - This route can delete the user specified if exist
 
-...
 
-### Bugs
-
-...
-
-### Any Other Sections
-### That You Think
-### Might be Useful
-
-## License
-
-Copyright © 2022 FIXME
-
-This program and the accompanying materials are made available under the
-terms of the Eclipse Public License 2.0 which is available at
-http://www.eclipse.org/legal/epl-2.0.
-
-This Source Code may also be made available under the following Secondary
-Licenses when the conditions for such availability set forth in the Eclipse
-Public License, v. 2.0 are satisfied: GNU General Public License as published by
-the Free Software Foundation, either version 2 of the License, or (at your
-option) any later version, with the GNU Classpath Exception which is available
-at https://www.gnu.org/software/classpath/license.html.
+###### Tasks
+    GET /tasks/
+    - This route return all stored tasks in tasks.json file
+    GET /tasks/{UUID}
+    - This route return all informations of task with uuid established
+    PUT /tasks/{UUID}
+    - This route can change name of task if exist, you have to send a body, like
+      {
+        "title":""
+        "description":""
+        "user_id":""
+        "status":""
+      }
+    POST /tasks/
+    - This route can create a task, you have to send a body, like
+      {
+        "title":""
+        "description":""
+        "user_id":""
+        "status":""
+      }
+    DELETE /tasks/{UUID}
+    - This route can delete the task specified if exist
